@@ -22,14 +22,12 @@ void SendCom(char Command[64], int talkto) {
         cout << "code no work" << endl;
     }
     serverAddress.sin_addr.s_addr = inet_addr("172.23.240.9"); //binding socket to address for wsl
-    cout << "1" << endl;
     // sending connection request if it fails we retry
     while (connect(sendSocket, (struct sockaddr*)&serverAddress,
         sizeof(serverAddress)) == -1) {
         cout << "failed connection" << endl;
         sleep(1);
     }
-    cout << "2" << endl;
     // sending data
     const char* message = Command;
     send(sendSocket, message, strlen(message), 0);
