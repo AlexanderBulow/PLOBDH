@@ -8,10 +8,10 @@ string Generatedata(int mode) { //arr is the command (takepic only), mode is an 
 	if (mode == 1) {
 		srand(time(NULL));
 		int randomnumber;
-		char data[8] = "picture";
-		char finaldata[12];
-		for (int i = 0; i < 12; i++) {
-			if (i < 7) {
+		char data[9] = " picture";
+		char finaldata[13];
+		for (int i = 0; i < 13; i++) {
+			if (i < 8) {
 				finaldata[i] = data[i];
 			}
 			else {
@@ -22,10 +22,11 @@ string Generatedata(int mode) { //arr is the command (takepic only), mode is an 
 		return finaldata;
 	}
 	else if (mode == 0) {
-		return "PL is turned off";
+		string r = " PL is turned off";
+		return r;
 	}
 	else {
-		return "PL has commited arson and is aprehended by the local police";
+		return " PL has commited arson and is aprehended by the local police";
 	}
 
 }

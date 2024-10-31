@@ -10,27 +10,30 @@ using namespace std;
 
 int main()
 {
-	char command[64];
 	int mode = 0;
+	string command;
+	char commandsend[64];
 	while (true) {
-		char* receiving = GetCommand(2);
+		command = "";
+		char* recchar = GetCommand(5);
+		string receiving(recchar);
 		if (receiving == "t_picture") {
-			char command[64];
-			string str = Generatedata(mode);
-			strcpy(command, str.c_str());;
+			command = Generatedata(mode);
 		}
 		else if (receiving == "targetmode") {
 			mode = 1;
-			char command[64] = "PL is turned on";
+			command = " PL is turned on";
 		}
 		else if (receiving == "safemode") {
 			mode = 0;
-			char command[64]="PL is turned off";
+			command =" PL is turned off";
 		}
 		else{ 
-			char command[64]="invalid command to PL";
+			command =" invalid command to PL";
 		}
-		SendCom(command, 2);
+		cout << command << endl;
+		strcpy(commandsend, command.c_str());
+		SendCom(commandsend, 6);
 
 	}
 	return 0;
