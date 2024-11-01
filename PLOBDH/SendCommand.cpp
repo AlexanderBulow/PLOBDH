@@ -37,7 +37,7 @@ void SendCom(char Command[64], int talkto) {
         serverAddress.sin_port = htons(8000); //port we connect to
     }
     else {
-        cout << "code no work" << endl;
+        cout << "Unable to connect to the specified port" << endl;
     }
     serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1"); //binding socket to address for wsl
     // sending connection request if it fails we retry

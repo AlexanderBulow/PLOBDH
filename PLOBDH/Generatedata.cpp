@@ -26,7 +26,7 @@ string Generatedata(int mode) { //arr is the command (takepic only), mode is an 
 		return r;
 	}
 	else {
-		return " PL has commited arson and is aprehended by the local police";
+		return " Wrong input";
 	}
 
 }
